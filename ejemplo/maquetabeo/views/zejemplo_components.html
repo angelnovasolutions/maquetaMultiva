@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Multiva</title>
+		<link rel="stylesheet" href="../css/jquery-ui.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+	</head>
+	<body ng-app="myApp">
+		<div class="container">
+			<div class="div row" style="margin-top: 15px;"><!-- style inline only for show-->
+				<div class="col-md-6">
+					<div class="input-group form-input">
+						<span class="input-group-addon glyphicon glyphicon-search" hidden="true" id="search-element"></span>
+	                	<input type="text" class="form-input-text search-element" aria-describedby="search-addon" id="search-element" placeholder="Fecha, folio, referencia, descripción, cargo, abono o saldo">
+	                </div>
+				</div>
+				<div class="col-md-3">
+	                <div class="dropdown select-element">
+						<button id="select-interval" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<label>Depósitos y retiros</label>
+							<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="select-interval">
+							<li>Depósitos y retiros</li>
+							<li>Depósitos y retiros 2</li>
+							<li>Depósitos y retiros 3</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2">
+	                <div class="dropdown select-element">
+						<button id="select-element" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<label>10</label>
+							<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="select-element">
+							<li>10</li>
+							<li>50</li>
+							<li>100</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="div row" style="margin-top: 15px;"><!-- style inline only for show-->
+				<div class="col-md-6">
+					<div class="dropdown select-search">
+						<button id="select-interval" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<label class="select-search-item">
+								<strong>00000001241234</strong>
+								<i>$123,000,000.00</i>
+							</label>
+							<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+						</button>
+						<div class="input-group select-search-input">
+							<input type="text">
+		                </div>
+						<ul class="dropdown-menu" aria-labelledby="select-interval">
+							<li>
+								<label class="select-search-item">
+									<strong>00000009845623</strong>
+									<i>$23,000,000.00</i>
+								</label>
+							</li>
+							<li>
+								<label class="select-search-item">
+									<strong>00000000984567</strong>
+									<i>$88,000,000.00</i>
+								</label>
+							</li>
+							<li>
+								<label class="select-search-item">
+									<strong>00000008901234</strong>
+									<i>$100,000,000.00</i>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="div row" style="margin-top: 15px;margin-bottom: 15px;"><!-- style inline only for show-->
+				<div class="col-md-6">
+					<label class="radio-inline state-period">
+					  <input type="radio" name="after-before" id="inlineRadio1" value="actual"> Actual
+					</label>
+					<label class="radio-inline state-period">
+					  <input type="radio" name="after-before" id="inlineRadio2" value="anterior"> Anterior
+					</label>
+				</div>
+				<div class="col-md-3" ng-controller="controller">
+	                <div class="input-group calendar-element"
+					     moment-picker="ctrl.datepicker"
+					     format="YYYY-MM-DD">
+					    <input class="form-control data-range"
+					           placeholder="Rango de fechas"
+					           ng-model="ctrl.datepicker"
+					           ng-model-options="{ updateOn: 'blur' }">
+			           	<span class="input-group-addon">
+					        <i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+					    </span>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default grid-default">
+				<div class="panel-body">
+			    	<div class="table-responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Fecha</th>
+									<th>Folio</th>
+									<th>Referencia</th>
+									<th>Descripción</th>
+									<th>Cargo</th>
+									<th>Abono</th>
+									<th>Saldo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Checkboxes need id and sibling label the id like for -->
+								<tr>
+									<td>
+										<input type="checkbox" id="c1" name="cb" checked="true">
+										<label for="c1"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td class="reference">
+										78026578352
+									</td>
+									<td>
+										Traspaso cuentas Multiva recepción de la cuenta MXN 656134
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$10,000.00
+									</td>
+									<td>
+										$20,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c2">
+										<label for="c2"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Pago con cheques pago de cheques No.98715381
+									</td>
+									<td>
+										$4,000.00
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$16,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c3">
+										<label for="c3"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										SPEI envíado a BBVA Bancomer 1278377853202 nombre
+										68026378 IVA Acreditable $0.00 RFC 1234567IHGUY
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$15,000.00
+									</td>
+									<td>
+										$35,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c4">
+										<label for="c4"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Traspaso cuentas Multiva recepción de la cuenta MXN 656134
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$10,000.00
+									</td>
+									<td>
+										$20,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c5">
+										<label for="c5"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Pago con cheques pago de cheques No.98715381
+									</td>
+									<td>
+										$4,000.00
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$16,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c6">
+										<label for="c6"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Traspaso cuentas Multiva recepción de la cuenta MXN 656134
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$10,000.00
+									</td>
+									<td>
+										$20,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c7">
+										<label for="c7"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Pago con cheques pago de cheques No.98715381
+									</td>
+									<td>
+										$4,000.00
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$16,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c8">
+										<label for="c8"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Traspaso cuentas Multiva recepción de la cuenta MXN 656134
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$10,000.00
+									</td>
+									<td>
+										$20,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c9">
+										<label for="c9"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Pago con cheques pago de cheques No.98715381
+									</td>
+									<td>
+										$4,000.00
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$16,000.00
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" id="c10">
+										<label for="c10"></label>
+									</td>
+									<td>
+										<span>01/12/2017</span>
+										<span>12:45:00 pm</span>
+									</td>
+									<td>
+										FLLH198472400234
+									</td>
+									<td>
+										78026578352
+									</td>
+									<td>
+										Traspaso cuentas Multiva recepción de la cuenta MXN 656134
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										$10,000.00
+									</td>
+									<td>
+										$20,000.00
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<button type="button" class="btn btn-event">Continuar</button>
+					<ul class="list-inline account-pagination pagination-center">
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-menu-left" hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							1 - 3 de 1000
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-menu-right" hidden="true"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel panel-default grid-cfdi">
+				<div class="panel-body">
+			    	<span class="title-cfdi">Recuerda que solo puedes descargar hasta 5 archivos OPT.</span>
+					<div class="period-container">
+						<div class="row">
+							<div class="col-md-2">
+								<label>3Q 2017</label>
+								<div class="period-container-items">
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a1">
+									    	<label for="a1"></label>
+									    	<span>Septiembre</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a2">
+									    	<label for="a2"></label>
+									    	<span>Agosto</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a3">
+									    	<label for="a3"></label>
+									    	<span>Julio</span>
+									  	</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>2Q 2017</label>
+								<div class="period-container-items">
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a4">
+									    	<label for="a4"></label>
+									    	<span>Junio</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a5">
+									    	<label for="a5"></label>
+									    	<span>Mayo</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a6">
+									    	<label for="a6"></label>
+									    	<span>Abril</span>
+									  	</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>1Q 2017</label>
+								<div class="period-container-items">
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a7">
+									    	<label for="a7"></label>
+									    	<span>Marzo</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a8">
+									    	<label for="a8"></label>
+									    	<span>Febrero</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a9">
+									    	<label for="a9"></label>
+									    	<span>Enero</span>
+									  	</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="period-container">
+						<div class="row">
+							<div class="col-md-2">
+								<label>4Q 2016</label>
+								<div class="period-container-items">
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a10">
+									    	<label for="a10"></label>
+									    	<span>Diciembre</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a11">
+									    	<label for="a11"></label>
+									    	<span>Noviembre</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a12">
+									    	<label for="a12"></label>
+									    	<span>Octubre</span>
+									  	</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>2Q 2017</label>
+								<div class="period-container-items">
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a13">
+									    	<label for="a13"></label>
+									    	<span>Septiembre</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a14">
+									    	<label for="a14"></label>
+									    	<span>Agosto</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a15">
+									    	<label for="a15"></label>
+									    	<span>Julio</span>
+									  	</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>1Q 2017</label>
+								<div class="period-container-items">
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a16">
+									    	<label for="a16"></label>
+									    	<span>Junio</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a17">
+									    	<label for="a17"></label>
+									    	<span>Mayo</span>
+									  	</label>
+									</div>
+									<div class="checkbox">
+										<label class="period-container-label">
+									    	<input type="checkbox" value="" id="a18">
+									    	<label for="a18"></label>
+									    	<span>Abril</span>
+									  	</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<button type="button" class="btn btn-event">Descargar</button>
+				</div>
+			</div>
+			<div class="panel panel-default grid-default">
+				<div class="panel-body">
+			    	<div class="table-responsive">
+						<table class="table table-striped clearance">
+							<thead>
+								<tr>
+									<th>Tipo de constancia</th>
+									<th>No. Cliente</th>
+									<th>No. Contrato</th>
+									<th>RFC Receptor</th>
+									<th>UIDD</th>
+									<th>Archivo</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Checkboxes need id and sibling label the id like for -->
+								<tr>
+									<td>CRI</td>
+									<td>6342322344</td>
+									<td>469256879</td>
+									<td>CUBA89013DY</td>
+									<td>SEDFA13456-87345-RYHHJ-98256</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions" id="r1" value="option1">
+											<label for="r1"></label>PDF
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions" id="r2" value="option1">
+											<label for="r2"></label>XML
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>CRI</td>
+									<td>6342322344</td>
+									<td>469256879</td>
+									<td>CUBA89013DY</td>
+									<td>SEDFA13456-87345-RYHHJ-98256</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions1" id="r3" value="option1">
+											<label for="r3"></label>PDF
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions1" id="r4" value="option1">
+											<label for="r4"></label>XML
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>CRI</td>
+									<td>6342322344</td>
+									<td>469256879</td>
+									<td>CUBA89013DY</td>
+									<td>SEDFA13456-87345-RYHHJ-98256</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions2" id="r5" value="option1">
+											<label for="r5"></label>PDF
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions2" id="r6" value="option1">
+											<label for="r6"></label>XML
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>CRI</td>
+									<td>6342322344</td>
+									<td>469256879</td>
+									<td>CUBA89013DY</td>
+									<td>SEDFA13456-87345-RYHHJ-98256</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions3" id="r7" value="option1">
+											<label for="r7"></label>PDF
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions3" id="r8" value="option1">
+											<label for="r8"></label>XML
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>CRI</td>
+									<td>6342322344</td>
+									<td>469256879</td>
+									<td>CUBA89013DY</td>
+									<td>SEDFA13456-87345-RYHHJ-98256</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions4" id="r9" value="option1">
+											<label for="r9"></label>PDF
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions4" id="r10" value="option1">
+											<label for="r10"></label>XML
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>CRI</td>
+									<td>6342322344</td>
+									<td>469256879</td>
+									<td>CUBA89013DY</td>
+									<td>SEDFA13456-87345-RYHHJ-98256</td>
+									<td>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions5" id="r11" value="option1">
+											<label for="r11"></label>PDF
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="inlineRadioOptions5" id="r12" value="option1">
+											<label for="r12"></label>XML
+										</label>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<button type="button" class="btn btn-event btn-event-disable" disabled="disabled">Descargar</button>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- Angular requires -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
+		<script src="../angular-moment-picker-master/dist/angular-moment-picker.min.js"></script>
+		<link href="../angular-moment-picker-master/dist/angular-moment-picker.min.css" rel="stylesheet">
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery-ui.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/main.js"></script>
+
+	</body>
+</html>

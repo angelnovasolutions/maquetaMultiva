@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Multiva</title>
+		<link rel="stylesheet" href="../css/jquery-ui.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+	</head>
+	<body>
+		<header class="custom-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 no-padding-right">
+						<img src="../img/Logo_Multiva.jpg" alt="Multiva" class="multiva-logo">
+					</div>
+					<div class="col-md-3 col-md-offset-5">
+						<p class="setting-user">Multiva usuario maestro | Luis Pérez Galindo</p>
+						<p class="setting-last-access">Último acceso: 12/Diciembre/2017 12:00:34 hrs</p>
+					</div>
+					<div class="col-md-2">
+						<ul class="list-inline user-options-settings">
+							<li>
+								<a href="#">
+									<img src="../img/icons/user_options/alert.png" class="user-options-icons">
+									<span class="user-options-caption">Avisos</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../img/icons/user_options/help.png" class="user-options-icons">
+									<span class="user-options-caption">Ayuda</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="../img/icons/user_options/logout.png" class="user-options-icons">
+									<span class="user-options-caption">Salir</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="underline">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<nav class="navbar custom-navbar">
+								<div class="container-fluid">
+									<div class="navbar-header">
+									  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+									    <span class="icon-bar"></span>
+									    <span class="icon-bar"></span>
+									    <span class="icon-bar"></span>
+									  </button>
+									</div>
+									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+										<ul class="nav navbar-nav user-options">
+											<li class="selected">
+												<a href="#">
+													<img src="../img/icons/navbar/accounts.png" class="user-options-item">
+													Mis cuentas
+												</a> 
+											</li>
+											<li>
+												<a href="#">
+													<img src="../img/icons/navbar/consult.png" class="user-options-item">
+													Consultas
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../img/icons/navbar/transaction.png" class="user-options-item">
+													Transacciones
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../img/icons/navbar/payment.png" class="user-options-item">
+													Pagos
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../img/icons/navbar/payroll.png" class="user-options-item">
+													Nómina
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../img/icons/navbar/admin.png" class="user-options-item">
+													Administración
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../img/icons/navbar/profile.png" class="user-options-item">
+													Perfiles y firmas
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="background-page">
+			<!-- Begin transaction section -->
+				<div class="container">
+					<div class="row">
+				    	<div class="col-md-8 col-md-offset-2">
+				        	<div class="row row-blue-menu">
+						    	<div class="col-md-4 item-blue-menu">
+						        	<a href="#" class="active">Mis Cuentas</a>
+						        </div>
+						        <div class="col-md-4 item-blue-menu">
+						        	<a href="">Terceros Multiva</a>
+						        </div>
+						        <div class="col-md-4 item-blue-menu">
+						        	<a href="">Otros Bancos</a>
+						        </div>
+							</div>
+				        </div>
+					</div>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<div class="row wizard">
+						        <div class="col-md-4 steps first-step active">
+						        	<div class="border-step">
+						            	<div class="inner-step">1</div>
+						        	</div>
+						        	<p>Ingresa los datos de la operación</p>
+						        </div>
+						        <div class="col-md-4 steps n-step" >
+						        	<div class="border-step">
+						            	<div class="inner-step">2</div>
+						        	</div>
+						        	<p>Revisa y autoriza la operación</p>
+						        </div>
+						        <div class="col-md-4 steps last-step">
+						        	<div class="border-step">
+						            	<div class="inner-step">3</div>
+						        	</div>
+						        	<p>Resultado de la operación</p>
+						        </div>
+							</div>
+						</div>
+			    	</div>
+			    	<div class="row">
+			    		<div class="col-md-8 col-md-offset-2">
+			    			<div class="container-custom">
+			    				<div class="tab-content">
+					    			<div role="tabpanel" class="tab-pane active" id="step1">
+					    				<label class="transaction-indication">Ingresa los datos de la operación</label>
+					    				<div class="movement-container">
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<label class="movement-title"><strong>Cuenta retiro:</strong></label>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="dropdown select-search">
+														<button id="select-interval" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<label class="select-search-item">
+																<strong>00000001241234</strong>
+																<i>$123,000,000.00</i>
+															</label>
+															<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+														</button>
+														<div class="input-group select-search-input">
+															<input type="text">
+										                </div>
+														<ul class="dropdown-menu" aria-labelledby="select-interval">
+															<li>
+																<label class="select-search-item">
+																	<strong>00000009845623</strong>
+																	<i>$23,000,000.00</i>
+																</label>
+															</li>
+															<li>
+																<label class="select-search-item">
+																	<strong>00000000984567</strong>
+																	<i>$88,000,000.00</i>
+																</label>
+															</li>
+															<li>
+																<label class="select-search-item">
+																	<strong>00000008901234</strong>
+																	<i>$100,000,000.00</i>
+																</label>
+															</li>
+														</ul>
+													</div>
+						    					</div>
+						    				</div>
+					    				</div>
+					    				<div class="movement-container">
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<label class="movement-title"><strong>Cuenta depósito:</strong></label>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="dropdown select-search">
+														<button id="select-interval" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<label class="select-search-item">
+																<strong>00000001241234</strong>
+																<i>Citybanamex - Ángelica Buendía Cortés - impresor</i>
+															</label>
+															<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+														</button>
+														<div class="input-group select-search-input">
+															<input type="text">
+										                </div>
+														<ul class="dropdown-menu" aria-labelledby="select-interval">
+															<li>
+																<label class="select-search-item">
+																	<strong>00000009845623</strong>
+																	<i>Citybanamex - Ángelica Buendía Cortés - impresor</i>
+																</label>
+															</li>
+															<li>
+																<label class="select-search-item">
+																	<strong>00000000984567</strong>
+																	<i>Citybanamex - Ángelica Buendía Cortés - impresor</i>
+																</label>
+															</li>
+															<li>
+																<label class="select-search-item">
+																	<strong>00000008901234</strong>
+																	<i>Citybanamex - Ángelica Buendía Cortés - impresor</i>
+																</label>
+															</li>
+														</ul>
+													</div>
+						    					</div>
+						    				</div>
+					    				</div>
+					    				<div class="movement-container">
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<label class="movement-title"><strong>Importe:</strong></label>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="form-group movement-input">
+													    <input type="text" class="form-control" placeholder="$1,000.00">
+													</div>
+													<span class="movement-description">$5.00 <small>Monto de comisión</small></span>
+						    					</div>
+						    				</div>
+					    				</div>
+					    				<div class="divider"></div>
+					    				<div class="second-section">
+					    					<label>Datos adicionales</label>
+					    					<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Concepto:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="form-group">
+													    <input type="text" class="input-above" placeholder="Anticipo">
+													</div>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Número de referencia SPEI:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="form-group">
+													    <input type="text" class="" placeholder="1234567">
+													</div>
+						    					</div>
+						    				</div>
+						    				<label>Notificar a beneficiario</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Teléfono:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="form-group">
+													    <input type="text" class="input-above" placeholder="(55) 1234 5678">
+													</div>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Correo electrónico:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="form-group">
+													    <input type="text" class="" placeholder="angelicabuco@gmail.com">
+													</div>
+						    					</div>
+						    				</div>
+						    				<label>Comprobante fiscal mensual</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">RFC (Sin guiones):</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<div class="form-group">
+													    <input type="text" placeholder="ABC42441100KJ">
+													</div>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">IVA:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span class="fix-element">$0.80</span>
+						    					</div>
+						    				</div>
+					    				</div>
+					    				<div class="divider"></div>
+					    				<div class="btn-container">
+						    				<button type="button" class="btn btn-cancel btn-accion">
+				    							Cancelar
+				    						</button>
+				    						<a href="#step2" aria-controls="step2" role="tab" data-toggle="tab" class="btn btn-accion btn-accept">
+				    							Continuar
+				    						</a>
+			    						</div>
+					    			</div>
+					    			<div role="tabpanel" class="tab-pane" id="step2">
+					    				<label class="transaction-indication">Revisa y autoriza la operación</label>
+					    				<div class="movement-container-review">
+						    				<div class="movement-review">
+							    				<div class="row">
+							    					<div class="col-md-4">
+							    						<label><strong>Cuenta retiro:</strong></label>
+							    					</div>
+							    					<div class="col-md-8">
+							    						<label class="movement-amount"><strong>00000001241234</strong></label>
+														<span class="movement-review-desc">$123,000,000.00 MXN</span>
+							    					</div>
+							    				</div>
+						    				</div>
+						    				<div class="movement-review">
+							    				<div class="row">
+							    					<div class="col-md-4">
+							    						<label><strong>Cuenta depósito:</strong></label>
+							    					</div>
+							    					<div class="col-md-8">
+							    						<label class="movement-amount"><strong>123425657541</strong></label>
+														<span class="movement-review-desc">Citibanamex - Angélica Buendía Cortez - Impresor</span>
+							    					</div>
+							    				</div>
+						    				</div>
+						    				<div class="movement-review">
+							    				<div class="row">
+							    					<div class="col-md-4">
+							    						<label><strong>Importe:</strong></label>
+							    					</div>
+							    					<div class="col-md-8">
+							    						<label class="movement-amount"><strong>$1,000.00</strong></label>
+							    						<span class="movement-review-desc">$5.00 Monto de comisión</span>
+							    					</div>
+							    				</div>
+						    				</div>
+					    				</div>
+					    				<div class="second-section second-section-fixed">
+					    					<label class="second-section-label">Datos adicionales</label>
+					    					<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Concepto:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>Anticipo</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Número de referencia SPEI:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>1234567</span>
+						    					</div>
+						    				</div>
+						    				<label class="second-section-label">Notificar a beneficiario</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Teléfono:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>(55) 1234 5678</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">Correo electrónico:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>angelicabuco@gmail.com</span>
+						    					</div>
+						    				</div>
+						    				<label class="second-section-label">Comprobante fiscal mensual</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">RFC (Sin guiones):</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>ABC42441100KJ</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span class="second-section-title">IVA:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>$0.80</span>
+						    					</div>
+						    				</div>
+					    				</div>
+					    				<div class="divider"></div>
+					    				<div class="btn-container">
+				    						<a href="#step1" aria-controls="step1" role="tab" data-toggle="tab" class="btn btn-accion btn-cancel">
+				    							Editar
+				    						</a>
+				    						<a href="#step3" aria-controls="step3" role="tab" data-toggle="tab" class="btn btn-accion btn-accept">
+									    		Aceptar
+									    	</a>
+								    	</div>
+					    			</div>
+					    			<div role="tabpanel" class="tab-pane" id="step3">
+					    				<label class="transaction-indication">Resultado de la operación</label>
+					    				<div class="alert alert-success" role="alert">
+					    					Transacción procesada exitosamente con número de folio: FT12135GJG51008
+					    				</div>
+					    				<div class="row">
+					    					<div class="col-md-4">
+					    						<label><strong>Cuenta retiro:</strong></label>
+					    					</div>
+					    					<div class="col-md-8">
+					    						<label>00000001241234</label>
+												<span>$123,000,000.00 MXN</span>
+					    					</div>
+					    				</div>
+					    				<div class="row">
+					    					<div class="col-md-4">
+					    						<label><strong>Cuenta depósito:</strong></label>
+					    					</div>
+					    					<div class="col-md-8">
+					    						<label>123425657541</label>
+												<span>Citibanamex - Angélica Buendía Cortez - Impresor</span>
+					    					</div>
+					    				</div>
+					    				<div class="row">
+					    					<div class="col-md-4">
+					    						<label><strong>Importe:</strong></label>
+					    					</div>
+					    					<div class="col-md-8">
+					    						<label>$1,000.00</label>
+					    						<span>$5.00 Monto de comisión</span>
+					    					</div>
+					    				</div>
+					    				<div class="second-section">
+					    					<label>Datos adicionales</label>
+					    					<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Concepto:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>Anticipo</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Número de referencia SPEI:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>1234567</span>
+						    					</div>
+						    				</div>
+						    				<label>Notificar a beneficiario</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Teléfono:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>(55) 1234 5678</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Correo electrónico:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>angelicabuco@gmail.com</span>
+						    					</div>
+						    				</div>
+						    				<label>Comprobante fiscal mensual</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>RFC (Sin guiones):</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>ABC42441100KJ</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>IVA:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>$0.80</span>
+						    					</div>
+						    				</div>
+						    				<label>Fecha, folio y clave de operación.</label>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Fecha y hora:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>12/12/2017 - 14:35:00hrs</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Folio MultivaNet:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>0917687</span>
+						    					</div>
+						    				</div>
+						    				<div class="row">
+						    					<div class="col-md-4">
+						    						<span>Clave de rastreo:</span>
+						    					</div>
+						    					<div class="col-md-8">
+						    						<span>09876456713</span>
+						    					</div>
+						    				</div>
+					    				</div>
+			    						<a href="#step1" aria-controls="step1" role="tab" data-toggle="tab" class="btn">
+			    							Otra transacción
+			    						</a>
+			    						<a class="btn btn-primary">
+								    		Imprimir
+								    	</a>
+					    			</div>
+				    			</div>
+			    			</div>
+			    			<!-- <div>
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="home">
+										UNO
+										<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Adelante</a>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="profile">
+										DOS
+										<a href="#home" aria-controls="home" role="tab" data-toggle="tab">Atras</a>
+										<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Adelante</a>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="messages">
+										TRES
+										<a href="#messages" aria-controls="profile" role="tab" data-toggle="tab">Atras</a>
+										<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Adelante</a>
+										
+									</div>
+									<div role="tabpanel" class="tab-pane" id="settings">Ultimo</div>
+								</div>
+							</div> -->
+			    		</div>
+			    	</div>
+		      	</div>
+			<!-- End transaction section -->
+			<footer class="custom-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-1">
+							<img src="../img/Logo_Multiva.jpg" alt="Multiva" class="multiva-logo">
+						</div>
+						<div class="col-md-11">
+							<p class="company-info">
+								D.R. Copyright 2017, Derechos Reservados, Banco Multiva, S.A., Institución de Banca Multiple, Multivalores Grupo Financiero.
+							</p>
+							<p class="company-info">Cerrada de Tecamachalco No.45 Col. Reforma Social Deleg. Miguel Hidalgo 11650 México, D.F.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery-ui.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/main.js"></script>
+	</body>
+</html>
