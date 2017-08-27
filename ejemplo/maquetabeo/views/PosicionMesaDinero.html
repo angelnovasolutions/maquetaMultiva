@@ -55,14 +55,14 @@
 			</div>
 			<div class="lienzo">
 					Criterios de Búsqueda
-			</div>
+				</div>
 			<div class="divWidthMargin0">  <!-- panel panel-default grid-default  -->
 				<table class="tableMargin0">
 					<tr>
 						<td class="tableMargin0Td1">
 								<div class="input-group form-input" style="width: 175%">
 										<span class="input-group-addon glyphicon glyphicon-search" hidden="true" id="search-element"></span>
-										<input type="text" class="form-input-text search-element" aria-describedby="search-addon" id="search-element" placeholder="Fecha, Folio, Referencia, Descripción, Número Cliente, Número Cuenta, Cargos, Abonos, Saldo">
+										<input type="text" class="form-input-text search-element" aria-describedby="search-addon" id="search-element" placeholder="Inversión, Emisora, Serie, Titulos, Precio, Valuación, Número Cuenta">
 								</div>
 						</td>
 						<td class="tableMargin0Td2">
@@ -126,77 +126,61 @@
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>Fecha</th>
-									<th>Folio</th>
-									<th>Referencia</th>
-									<th>Descripción</th>
-									<th>Número Cliente</th>
+									<th>Inversión</th>
+									<th>Emisora</th>
+									<th>Serie</th>
+									<th>Titulos</th>
+									<th>Precio</th>
+									<th>Valuación</th>
 									<th>Número Cuenta</th>
-									<th>Cargos</th>
-									<th>Abonos</th>
-									<th>Saldo</th>
 								</tr>
 							</thead>
 							<tbody>
 								<!-- Checkboxes need id and sibling label the id like for -->
 								<tr>
 									<td>
-										<span>01/12/2017</span>
-										<span>12:45:00 pm</span>
+										$25,000.00
 									</td>
 									<td>
-										39485
+										BBVA
 									</td>
 									<td>
-										TR234FER
+										48573984
 									</td>
 									<td>
-										Pago de servicio potable
+										Cheque
 									</td>
 									<td>
-										38473
+										$50,000.00
 									</td>
 									<td>
-										43423490830
+										OK
 									</td>
 									<td>
-										
-									</td>
-									<td>
-										$3503.00
-									</td>
-									<td>
-										$3503.00
+										204872649826
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<span>02/15/2017</span>
-										<span>16:43:00 pm</span>
+										$30,000.00
 									</td>
 									<td>
-										59384
+										BBVA
 									</td>
 									<td>
-										PF938HGR
+										7345336
 									</td>
 									<td>
-										Devolución fiscal
+										Cheque
 									</td>
 									<td>
-										59382
+										$60,000.00
 									</td>
 									<td>
-										48423564325
+										OK
 									</td>
 									<td>
-										$2500.00
-									</td>
-									<td>
-										
-									</td>
-									<td>
-										
+										855434254894
 									</td>
 								</tr>
 							</tbody>
@@ -221,10 +205,142 @@
 					</ul>
 				</div>
 			</div>
+			<div class="panel panel-default grid-default">
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Emisora</th>
+										<th>Serie</th>
+										<th>Titulos</th>
+										<th>Precio</th>
+										<th>Valuación</th>
+										<th>Inversión</th>
+										<th>Número Cuenta</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- Checkboxes need id and sibling label the id like for -->
+									<tr>
+										<td>
+											$10,000.00
+										</td>
+										<td>
+											BANAMEX
+										</td>
+										<td>
+											85756464
+										</td>
+										<td>
+											Cheque
+										</td>
+										<td>
+											$30,000.00
+										</td>
+										<td>
+											OK
+										</td>
+										<td>
+											636332425564
+										</td>
+									</tr>
+									<tr>
+										<td>
+											$30,000.00
+										</td>
+										<td>
+											HSBC
+										</td>
+										<td>
+											2846463
+										</td>
+										<td>
+											Cheque
+										</td>
+										<td>
+											$70,000.00
+										</td>
+										<td>
+											OK
+										</td>
+										<td>
+											319854498723
+										</td>
+									</tr>
+									<tr>
+										<td>
+											$15,000.00
+										</td>
+										<td>
+											BBVA
+										</td>
+										<td>
+											8234347
+										</td>
+										<td>
+											Cheque
+										</td>
+										<td>
+											$20,000.00
+										</td>
+										<td>
+											OK
+										</td>
+										<td>
+											948223137283
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<ul class="list-inline account-pagination pagination-center">
+							<li>
+								<a href="#">
+									<span class="glyphicon glyphicon-menu-left" hidden="true"></span>
+								</a>
+							</li>
+							<li>
+								1 - 3 de 3
+							</li>
+							<li>
+								<a href="#">
+									<span class="glyphicon glyphicon-menu-right" hidden="true"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
 			<div class="divRight">
-					<div class="input-group form-input footerGray">
-							[Exportar a Excel]&nbsp;&nbsp;&nbsp;[Imprimir]
+				<div class="input-group form-input footerGray">
+					<table>
+						<tbody>
+							<tr>
+								<td>Valuación Portafolio: OK</td>
+							</tr>
+							<tr>
+								<td>Efectivo Disponible: $150,000.00</td>
+							</tr>
+							<tr>
+								<td>Total Cartera: $300,000.00</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="separateDiv"></div>
+				<div class="input-group form-input footerGray">
+						<table>
+							<tbody>
+								<tr>
+										<div class="input-group form-input footerGray">
+												[Exportar a Excel]&nbsp;&nbsp;&nbsp;[Imprimir]
+										</div>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 			</div>
 		</div>

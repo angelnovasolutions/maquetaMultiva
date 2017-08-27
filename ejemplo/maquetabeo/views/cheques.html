@@ -56,70 +56,104 @@
 			<div class="lienzo">
 					Criterios de Búsqueda
 				</div>
-			<div class="divWidthMargin0"> <!-- panel panel-default grid-default  -->
-					<table class="tableMargin0">
-						<tr>
-                            <td>
-								Cuenta:&nbsp;&nbsp;&nbsp;&nbsp;
-							</td>
-							<td>
-								<div class="dropdown select-search divMarginTop">
-									<button id="select-interval" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<label class="select-search-item">
-											<strong>00000001241234</strong>
-											<i>$123,000,000.00</i>
-										</label>
-										<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-									</button>
+
+			<div class="divWidthMargin0">  <!-- panel panel-default grid-default  -->
+				<table class="tableMargin0">
+					<tr>
+						<td class="tableMargin0Td1">
+							<div class="div row" style="margin-top: 15px;"><!-- style inline only for show-->
+								<div class="col-md-6">
+									<div class="dropdown select-search">
+										<button id="select-interval" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<label class="select-search-item">
+												<strong>00000001241234</strong>
+												<i>$123,000,000.00</i>
+											</label>
+											<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+										</button>
+										<div class="input-group select-search-input">
+											<input type="text">
+										</div>
+										<ul class="dropdown-menu" aria-labelledby="select-interval">
+											<li>
+												<label class="select-search-item">
+													<strong>00000009845623</strong>
+													<i>$23,000,000.00</i>
+												</label>
+											</li>
+											<li>
+												<label class="select-search-item">
+													<strong>00000000984567</strong>
+													<i>$88,000,000.00</i>
+												</label>
+											</li>
+											<li>
+												<label class="select-search-item">
+													<strong>00000008901234</strong>
+													<i>$100,000,000.00</i>
+												</label>
+											</li>
+										</ul>
+									</div>
 								</div>
-							</td>
-							<td>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							</td>
-							<td>
-									Fecha Inicial:&nbsp;&nbsp;
-							</td>
-							<td>
-								<div class="input-group calendar-element"
-									moment-picker="ctrl.datepicker"
-									format="YYYY-MM-DD">
-								   	<input class="form-control data-range"
-										  placeholder="Rango de fechas"
-										  ng-model="ctrl.datepicker"
-										  ng-model-options="{ updateOn: 'blur' }">
-									<span class="input-group-addon">
-									   <i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
-								   	</span>
-							   	</div>
-							</td>
-							<td>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							</td>
-							<td>
-								Fecha Final:&nbsp;&nbsp;
+							</div>
 						</td>
+						<td class="tableMargin0Td2">
+							<div>
+								<table>
+									<tr>
+										<td class="footerGray">
+												Rango de fechas:&nbsp;&nbsp;
+										</td>
+										<td>
+												<div class="input-group calendar-element"
+												moment-picker="ctrl.datepicker"
+												format="YYYY-MM-DD">
+												   <input class="form-control data-range"
+													  placeholder="Fecha inicio"
+													  ng-model="ctrl.datepicker"
+													  ng-model-options="{ updateOn: 'blur' }">
+												<span class="input-group-addon">
+												   <i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+												   </span>
+											   </div>
+										</td>
+										<td>
+												<div class="input-group calendar-element"
+												moment-picker="ctrl.datepicker"
+												format="YYYY-MM-DD">
+												<input class="form-control data-range"
+													placeholder="Fecha fin"
+													ng-model="ctrl.datepicker"
+													ng-model-options="{ updateOn: 'blur' }">
+												<span class="input-group-addon">
+												<i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+												</span>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+					<tr >
 						<td>
-							<div class="input-group calendar-element"
-								moment-picker="ctrl.datepicker"
-								format="YYYY-MM-DD">
-								   <input class="form-control data-range"
-									  placeholder="Rango de fechas"
-									  ng-model="ctrl.datepicker"
-									  ng-model-options="{ updateOn: 'blur' }">
-								<span class="input-group-addon">
-								   <i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
-								   </span>
-							   </div>
+							<div class="input-group form-input" style="width: 35%">
+										<span class="input-group-addon glyphicon glyphicon-search" hidden="true" id="search-element"></span>
+										<input type="text" class="form-input-text search-element" aria-describedby="search-addon" id="search-element" placeholder="Fecha, Folio, Referencia, Descripcion, Cargos, Abonos, Saldo">
+							</div>
 						</td>
-						</tr>
-					</table>
-				
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="btn btn-event">Consultar</button>
+						</td>
+					</tr>
+				</table>
 			</div>
-			<div class="buttonConsultaOperaciones">
-				<button type="button" class="btn btn-event">Consultar</button>
-			</div>
+
+			<div class="separateDiv"></div>
+
 			<div class="lienzo">
 				Movimientos del Mes
 			</div>
@@ -200,7 +234,7 @@
 							</a>
 						</li>
 						<li>
-							1 - 4 de 4
+							1 - 2 de 2
 						</li>
 						<li>
 							<a href="#">
@@ -211,8 +245,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-6 footerAlign">
-
+			<!-- <div class="col-md-6 footerAlign">
 				<table class="footerAlignTable">
 					<tr>
 						<td>
@@ -228,7 +261,14 @@
 						</td>
 					</tr>
 				</table>
+			</div> -->
+
+			<div class="divRight">
+					<div class="input-group form-input footerGray">
+							[Exportar a Excel]&nbsp;&nbsp;&nbsp;[Imprimir]
+					</div>
 			</div>
+
 		</div>
 		
 
